@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI4Science Catalyst Institute</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(to right, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(96, 165, 250, 0.3);
+        }
+        .cursor::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        /* Marquee Styles */
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            width: 100vw;
+            max-width: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .marquee-content {
+            display: flex;
+            width: max-content;
+        }
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        @keyframes scroll-right {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+        .animate-scroll-left {
+            animation: scroll-left 40s linear infinite;
+        }
+        .animate-scroll-right {
+            animation: scroll-right 40s linear infinite;
+        }
+        .marquee-container:hover .animate-scroll-left,
+        .marquee-container:hover .animate-scroll-right {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="bg-transparent text-slate-200 font-sans min-h-screen flex flex-col justify-between relative">
+    <!-- Background Video -->
+    <video autoplay loop muted playsinline class="fixed top-0 left-0 w-full h-full object-cover -z-20">
+        <source src="./logo/video_no_audio.mp4" type="video/mp4">
+    </video>
+    <div class="fixed top-0 left-0 w-full h-full bg-slate-950/80 -z-10 backdrop-blur-sm"></div>
+    
+    <!-- Navigation -->
+    <nav class="bg-black border-b border-slate-800 p-3 md:p-4">
+        <div class="max-w-6xl mx-auto flex justify-center md:justify-start items-center">
+            <div class="flex items-center gap-2">
+                <img src="./logo/ai4sciencecata.png" alt="AI4Science Catalyst Logo" class="h-7 md:h-8">
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col items-center justify-center p-4 sm:p-12 text-center mt-6">
+        <div class="max-w-2xl mx-auto space-y-4">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-2 min-h-[100px] md:min-h-[140px]">
+                Catalyzing the <br/>
+                <span id="typewriter" class="gradient-text"></span><span class="gradient-text cursor"></span>
+            </h1>
+            
+            <p class="text-base text-slate-400">
+                Advancing AI and physical science for autonomous research.
+            </p>
+        </div>
+
+        <!-- Portfolio Section -->
+        <div class="mt-20 w-full mx-auto pb-12 relative z-10">
+            <div class="flex flex-col items-center mb-10">
+                <h2 class="text-3xl font-bold text-white tracking-wide">Our Portfolio</h2>
+                <div class="w-12 h-1 bg-slate-500 rounded-full mt-1 mb-3"></div>
+                <p class="text-slate-400 text-xs">Open-source ecosystems for autonomous discovery</p>
+            </div>
+            
+                        <!-- Row 1: Scroll Left -->
+            <div class="marquee-container mb-4">
+                <div class="marquee-content animate-scroll-left gap-4 px-3">
+                    <!-- Original Items -->
+                    <!-- LabOS -->
+                    <a href="https://ai4labos.com/" target="_blank" class="w-[168px] h-[168px] flex-shrink-0 card-hover bg-slate-900/40 hover:bg-slate-800/60 border border-slate-700 hover:border-slate-500 rounded-2xl p-4 text-left group relative overflow-hidden flex flex-col justify-start cursor-pointer transition-all duration-300 whitespace-normal backdrop-blur-md">
+                        <div>
+                            <h3 class="text-base font-bold text-white group-hover:text-slate-200 transition-colors">LabOS</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mt-1 line-clamp-4">
+                                AI-XR co-scientist platform uniting multimodal perception, agents, and robotics to observe, reason, and collaborate with humans in real wet-labs.
+                            </p>
+                        </div>
+                        
+                    </a>
+                    <!-- CRISPR-GPT -->
+                    <a href="https://github.com/cong-lab/crispr-gpt-pub" target="_blank" class="w-[168px] h-[168px] flex-shrink-0 card-hover bg-slate-900/40 hover:bg-slate-800/60 border border-slate-700 hover:border-slate-500 rounded-2xl p-4 text-left group relative overflow-hidden flex flex-col justify-start cursor-pointer transition-all duration-300 whitespace-normal backdrop-blur-md">
+                        <div>
+                            <h3 class="text-base font-bold text-white group-hover:text-slate-200 transition-colors">CRISPR-GPT</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mt-1 line-clamp-4">
+                                AI agent system that automates complex gene-editing experiment design, robust protocol generation, and execution through natural language.
+                            </p>
+                        </div>
+                        
+                    </a>
+                    <!-- LabClaw -->
+                    <a href="https://labclaw-ai.github.io/" target="_blank" class="w-[168px] h-[168px] flex-shrink-0 card-hover bg-slate-900/40 hover:bg-slate-800/60 border border-slate-700 hover:border-slate-500 rounded-2xl p-4 text-left group relative overflow-hidden flex flex-col justify-start cursor-pointer transition-all duration-300 whitespace-normal backdrop-blur-md">
+                        <div>
+                            <h3 class="text-base font-bold text-white group-hover:text-slate-200 transition-colors">LabClaw</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mt-1 line-clamp-4">
+                                A comprehensive skill library and tool-creation module designed to power autonomous research and seamless physical execution in laboratories.
+                            </p>
+                        </div>
+                        
+                    </a>
+                    <!-- RNAGenesis -->
+                    <a href="https://github.com/zaixizhang/RNAGenesis" target="_blank" class="w-[168px] h-[168px] flex-shrink-0 card-hover bg-slate-900/40 hover:bg-slate-800/60 border border-slate-700 hover:border-slate-500 rounded-2xl p-4 text-left group relative overflow-hidden flex flex-col justify-start cursor-pointer transition-all duration-300 whitespace-normal backdrop-blur-md">
+                        <div>
+                            <h3 class="text-base font-bold text-white group-hover:text-slate-200 transition-colors">RNAGenesis</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mt-1 line-clamp-4">
+                                Generalist foundation model for RNA therapeutics that unifies deep sequence understanding, de novo RNA design, and 3D structure prediction.
+                            </p>
+                        </div>
+                        
+                    </a>
+                    <!-- MedOS -->
+                    <a href="https://medos-ai.github.io/" target="_blank" class="w-[168px] h-[168px] flex-shrink-0 card-hover bg-slate-900/40 hover:bg-slate-800/60 border border-slate-700 hover:border-slate-500 rounded-2xl p-4 text-left group relative overflow-hidden flex flex-col justify-start cursor-pointer transition-all duration-300 whitespace-normal backdrop-blur-md">
+                        <div>
+                            <h3 class="text-base font-bold text-white group-hover:text-slate-200 transition-colors">MedOS</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mt-1 line-clamp-4">
+                                An advanced AI-XR-Cobot platform built specifically for complex clinical reasoning, intelligent diagnostics, and interactive medical workflows.
+                            </p>
+                        </div>
+                        
+                    </a>
+                    <!-- Physics Supernova -->
+                    <a href="https://arxiv.org/abs/2509.01659" target="_blank" class="w-[168px] h-[168px] flex-shrink-0 card-hover bg-slate-900/40 hover:bg-slate-800/60 border border-slate-700 hover:border-slate-500 rounded-2xl p-4 text-left group relative overflow-hidden flex flex-col justify-start cursor-pointer transition-all duration-300 whitespace-normal backdrop-blur-md">
+                        <div>
+                            <h3 class="text-base font-bold text-white group-hover:text-slate-200 transition-colors">Physics Supernova</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mt-1 line-clamp-4">
+                                Elite AI agent system that scored 23.5/30 on theoretical questions at the 2025 International Physics Olympiad, surpassing human gold medalists.
+                            </p>
+                        </div>
+                        
+                    </a>
+                    <!-- Duplicate for Marquee -->
+                    <!-- LabOS -->
+                    <a href="https://ai4labos.com/" target="_blank" class="w-[168px] h-[168px] flex-shrink-0 card-hover bg-slate-900/40 hover:bg-slate-800/60 border border-slate-700 hover:border-slate-500 rounded-2xl p-4 text-left group relative overflow-hidden flex flex-col justify-start cursor-pointer transition-all duration-300 whitespace-normal backdrop-blur-md">
+                        <div>
+                            <h3 class="text-base font-bold text-white group-hover:text-slate-200 transition-colors">LabOS</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mt-1 line-clamp-4">
+                                AI-XR co-scientist platform uniting multimodal perception, agents, and robotics to observe, reason, and collaborate with humans in real wet-labs.
+                            </p>
+                        </div>
+                        
+                    </a>
+                    <!-- CRISPR-GPT -->
+                    <a href="https://github.com/cong-lab/crispr-gpt-pub" target="_blank" class="w-[168px] h-[168px] flex-shrink-0 card-hover bg-slate-900/40 hover:bg-slate-800/60 border border-slate-700 hover:border-slate-500 rounded-2xl p-4 text-left group relative overflow-hidden flex flex-col justify-start cursor-pointer transition-all duration-300 whitespace-normal backdrop-blur-md">
+                        <div>
+                            <h3 class="text-base font-bold text-white group-hover:text-slate-200 transition-colors">CRISPR-GPT</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mt-1 line-clamp-4">
+                                AI agent system that automates complex gene-editing experiment design, robust protocol generation, and execution through natural language.
+                            </p>
+                        </div>
+                        
+                    </a>
+                    <!-- LabClaw -->
+                    <a href="https://labclaw-ai.github.io/" target="_blank" class="w-[168px] h-[168px] flex-shrink-0 card-hover bg-slate-900/40 hover:bg-slate-800/60 border border-slate-700 hover:border-slate-500 rounded-2xl p-4 text-left group relative overflow-hidden flex flex-col justify-start cursor-pointer transition-all duration-300 whitespace-normal backdrop-blur-md">
+                        <div>
+                            <h3 class="text-base font-bold text-white group-hover:text-slate-200 transition-colors">LabClaw</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mt-1 line-clamp-4">
+                                A comprehensive skill library and tool-creation module designed to power autonomous research and seamless physical execution in laboratories.
+                            </p>
+                        </div>
+                        
+                    </a>
+                    <!-- RNAGenesis -->
+                    <a href="https://github.com/zaixizhang/RNAGenesis" target="_blank" class="w-[168px] h-[168px] flex-shrink-0 card-hover bg-slate-900/40 hover:bg-slate-800/60 border border-slate-700 hover:border-slate-500 rounded-2xl p-4 text-left group relative overflow-hidden flex flex-col justify-start cursor-pointer transition-all duration-300 whitespace-normal backdrop-blur-md">
+                        <div>
+                            <h3 class="text-base font-bold text-white group-hover:text-slate-200 transition-colors">RNAGenesis</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mt-1 line-clamp-4">
+                                Generalist foundation model for RNA therapeutics that unifies deep sequence understanding, de novo RNA design, and 3D structure prediction.
+                            </p>
+                        </div>
+                        
+                    </a>
+                    <!-- MedOS -->
+                    <a href="https://medos-ai.github.io/" target="_blank" class="w-[168px] h-[168px] flex-shrink-0 card-hover bg-slate-900/40 hover:bg-slate-800/60 border border-slate-700 hover:border-slate-500 rounded-2xl p-4 text-left group relative overflow-hidden flex flex-col justify-start cursor-pointer transition-all duration-300 whitespace-normal backdrop-blur-md">
+                        <div>
+                            <h3 class="text-base font-bold text-white group-hover:text-slate-200 transition-colors">MedOS</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mt-1 line-clamp-4">
+                                An advanced AI-XR-Cobot platform built specifically for complex clinical reasoning, intelligent diagnostics, and interactive medical workflows.
+                            </p>
+                        </div>
+                        
+                    </a>
+                    <!-- Physics Supernova -->
+                    <a href="https://arxiv.org/abs/2509.01659" target="_blank" class="w-[168px] h-[168px] flex-shrink-0 card-hover bg-slate-900/40 hover:bg-slate-800/60 border border-slate-700 hover:border-slate-500 rounded-2xl p-4 text-left group relative overflow-hidden flex flex-col justify-start cursor-pointer transition-all duration-300 whitespace-normal backdrop-blur-md">
+                        <div>
+                            <h3 class="text-base font-bold text-white group-hover:text-slate-200 transition-colors">Physics Supernova</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mt-1 line-clamp-4">
+                                Elite AI agent system that scored 23.5/30 on theoretical questions at the 2025 International Physics Olympiad, surpassing human gold medalists.
+                            </p>
+                        </div>
+                        
+                    </a>
+                </div>
+            </div>
+
+                        <!-- Row 2: Scroll Right (The rest) -->
+            <div class="marquee-container">
+                <div class="marquee-content animate-scroll-right gap-4 px-3">
+                    <!-- Original Items -->
+                    <!-- Alita -->
+                    <a href="https://arxiv.org/abs/2505.20286" target="_blank" class="w-[168px] h-[168px] flex-shrink-0 card-hover bg-slate-900/40 hover:bg-slate-800/60 border border-slate-700 hover:border-slate-500 rounded-2xl p-4 text-left group relative overflow-hidden flex flex-col justify-start cursor-pointer transition-all duration-300 whitespace-normal backdrop-blur-md">
+                        <h3 class="text-base font-bold text-white group-hover:text-slate-200 transition-colors">Alita: Self-Evolving Agents</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mt-1 line-clamp-4">
+                            Minimalist self-evolving generalist AI agent dynamically generating capabilities via Model Context Protocols to achieve 75.42% on the GAIA benchmark.
+                        </p>
+                    </a>
+                    <!-- TraceRL -->
+                    <a href="https://arxiv.org/abs/2509.06949" target="_blank" class="w-[168px] h-[168px] flex-shrink-0 card-hover bg-slate-900/40 hover:bg-slate-800/60 border border-slate-700 hover:border-slate-500 rounded-2xl p-4 text-left group relative overflow-hidden flex flex-col justify-start cursor-pointer transition-all duration-300 whitespace-normal backdrop-blur-md">
+                        <h3 class="text-base font-bold text-white group-hover:text-slate-200 transition-colors">TraceRL</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mt-1 line-clamp-4">
+                            Trajectory-aware reinforcement learning framework enabling diffusion-based language models to outperform larger autoregressive models in math.
+                        </p>
+                    </a>
+                    <!-- MATH-Perturb -->
+                    <a href="https://mwang-delta.vercel.app/research" target="_blank" class="w-[168px] h-[168px] flex-shrink-0 card-hover bg-slate-900/40 hover:bg-slate-800/60 border border-slate-700 hover:border-slate-500 rounded-2xl p-4 text-left group relative overflow-hidden flex flex-col justify-start cursor-pointer transition-all duration-300 whitespace-normal backdrop-blur-md">
+                        <h3 class="text-base font-bold text-white group-hover:text-slate-200 transition-colors">MATH-Perturb</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mt-1 line-clamp-4">
+                            Rigorous benchmark testing whether LLMs truly understand mathematical reasoning or rely on memorization by applying hard problem perturbations.
+                        </p>
+                    </a>
+                    <!-- Alita -->
+                    <a href="https://arxiv.org/abs/2505.20286" target="_blank" class="w-[168px] h-[168px] flex-shrink-0 card-hover bg-slate-900/40 hover:bg-slate-800/60 border border-slate-700 hover:border-slate-500 rounded-2xl p-4 text-left group relative overflow-hidden flex flex-col justify-start cursor-pointer transition-all duration-300 whitespace-normal backdrop-blur-md">
+                        <h3 class="text-base font-bold text-white group-hover:text-slate-200 transition-colors">Alita: Self-Evolving Agents</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mt-1 line-clamp-4">
+                            Minimalist self-evolving generalist AI agent dynamically generating capabilities via Model Context Protocols to achieve 75.42% on the GAIA benchmark.
+                        </p>
+                    </a>
+                    <!-- TraceRL -->
+                    <a href="https://arxiv.org/abs/2509.06949" target="_blank" class="w-[168px] h-[168px] flex-shrink-0 card-hover bg-slate-900/40 hover:bg-slate-800/60 border border-slate-700 hover:border-slate-500 rounded-2xl p-4 text-left group relative overflow-hidden flex flex-col justify-start cursor-pointer transition-all duration-300 whitespace-normal backdrop-blur-md">
+                        <h3 class="text-base font-bold text-white group-hover:text-slate-200 transition-colors">TraceRL</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mt-1 line-clamp-4">
+                            Trajectory-aware reinforcement learning framework enabling diffusion-based language models to outperform larger autoregressive models in math.
+                        </p>
+                    </a>
+                    <!-- MATH-Perturb -->
+                    <a href="https://mwang-delta.vercel.app/research" target="_blank" class="w-[168px] h-[168px] flex-shrink-0 card-hover bg-slate-900/40 hover:bg-slate-800/60 border border-slate-700 hover:border-slate-500 rounded-2xl p-4 text-left group relative overflow-hidden flex flex-col justify-start cursor-pointer transition-all duration-300 whitespace-normal backdrop-blur-md">
+                        <h3 class="text-base font-bold text-white group-hover:text-slate-200 transition-colors">MATH-Perturb</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mt-1 line-clamp-4">
+                            Rigorous benchmark testing whether LLMs truly understand mathematical reasoning or rely on memorization by applying hard problem perturbations.
+                        </p>
+                    </a>
+                    <!-- Duplicate for Marquee -->
+                    <!-- Alita -->
+                    <a href="https://arxiv.org/abs/2505.20286" target="_blank" class="w-[168px] h-[168px] flex-shrink-0 card-hover bg-slate-900/40 hover:bg-slate-800/60 border border-slate-700 hover:border-slate-500 rounded-2xl p-4 text-left group relative overflow-hidden flex flex-col justify-start cursor-pointer transition-all duration-300 whitespace-normal backdrop-blur-md">
+                        <h3 class="text-base font-bold text-white group-hover:text-slate-200 transition-colors">Alita: Self-Evolving Agents</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mt-1 line-clamp-4">
+                            Minimalist self-evolving generalist AI agent dynamically generating capabilities via Model Context Protocols to achieve 75.42% on the GAIA benchmark.
+                        </p>
+                    </a>
+                    <!-- TraceRL -->
+                    <a href="https://arxiv.org/abs/2509.06949" target="_blank" class="w-[168px] h-[168px] flex-shrink-0 card-hover bg-slate-900/40 hover:bg-slate-800/60 border border-slate-700 hover:border-slate-500 rounded-2xl p-4 text-left group relative overflow-hidden flex flex-col justify-start cursor-pointer transition-all duration-300 whitespace-normal backdrop-blur-md">
+                        <h3 class="text-base font-bold text-white group-hover:text-slate-200 transition-colors">TraceRL</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mt-1 line-clamp-4">
+                            Trajectory-aware reinforcement learning framework enabling diffusion-based language models to outperform larger autoregressive models in math.
+                        </p>
+                    </a>
+                    <!-- MATH-Perturb -->
+                    <a href="https://mwang-delta.vercel.app/research" target="_blank" class="w-[168px] h-[168px] flex-shrink-0 card-hover bg-slate-900/40 hover:bg-slate-800/60 border border-slate-700 hover:border-slate-500 rounded-2xl p-4 text-left group relative overflow-hidden flex flex-col justify-start cursor-pointer transition-all duration-300 whitespace-normal backdrop-blur-md">
+                        <h3 class="text-base font-bold text-white group-hover:text-slate-200 transition-colors">MATH-Perturb</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mt-1 line-clamp-4">
+                            Rigorous benchmark testing whether LLMs truly understand mathematical reasoning or rely on memorization by applying hard problem perturbations.
+                        </p>
+                    </a>
+                    <!-- Alita -->
+                    <a href="https://arxiv.org/abs/2505.20286" target="_blank" class="w-[168px] h-[168px] flex-shrink-0 card-hover bg-slate-900/40 hover:bg-slate-800/60 border border-slate-700 hover:border-slate-500 rounded-2xl p-4 text-left group relative overflow-hidden flex flex-col justify-start cursor-pointer transition-all duration-300 whitespace-normal backdrop-blur-md">
+                        <h3 class="text-base font-bold text-white group-hover:text-slate-200 transition-colors">Alita: Self-Evolving Agents</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mt-1 line-clamp-4">
+                            Minimalist self-evolving generalist AI agent dynamically generating capabilities via Model Context Protocols to achieve 75.42% on the GAIA benchmark.
+                        </p>
+                    </a>
+                    <!-- TraceRL -->
+                    <a href="https://arxiv.org/abs/2509.06949" target="_blank" class="w-[168px] h-[168px] flex-shrink-0 card-hover bg-slate-900/40 hover:bg-slate-800/60 border border-slate-700 hover:border-slate-500 rounded-2xl p-4 text-left group relative overflow-hidden flex flex-col justify-start cursor-pointer transition-all duration-300 whitespace-normal backdrop-blur-md">
+                        <h3 class="text-base font-bold text-white group-hover:text-slate-200 transition-colors">TraceRL</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mt-1 line-clamp-4">
+                            Trajectory-aware reinforcement learning framework enabling diffusion-based language models to outperform larger autoregressive models in math.
+                        </p>
+                    </a>
+                    <!-- MATH-Perturb -->
+                    <a href="https://mwang-delta.vercel.app/research" target="_blank" class="w-[168px] h-[168px] flex-shrink-0 card-hover bg-slate-900/40 hover:bg-slate-800/60 border border-slate-700 hover:border-slate-500 rounded-2xl p-4 text-left group relative overflow-hidden flex flex-col justify-start cursor-pointer transition-all duration-300 whitespace-normal backdrop-blur-md">
+                        <h3 class="text-base font-bold text-white group-hover:text-slate-200 transition-colors">MATH-Perturb</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mt-1 line-clamp-4">
+                            Rigorous benchmark testing whether LLMs truly understand mathematical reasoning or rely on memorization by applying hard problem perturbations.
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/50 py-8 text-center flex flex-col items-center gap-2 relative z-10">
+        <p class="text-slate-500 text-xs">&copy; 2026 AI4Science Catalyst Institute. A Non-Profit Organization.</p>
+        <p class="text-slate-400 text-xs">Stanford - Princeton AI Co-Scientist Team</p>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Typewriter Effect
+        const words = ["Future of Discovery", "Frontiers of Science", "Next Breakthrough"];
+        let i = 0;
+        let isDeleting = false;
+        let txt = '';
+        
+        function typeWriter() {
+            const currentWord = words[i % words.length];
+            const el = document.getElementById("typewriter");
+
+            if (isDeleting) {
+                txt = currentWord.substring(0, txt.length - 1);
+            } else {
+                txt = currentWord.substring(0, txt.length + 1);
+            }
+
+            el.innerHTML = txt;
+
+            let typeSpeed = 100;
+            if (isDeleting) typeSpeed /= 2; // Delete faster
+
+            if (!isDeleting && txt === currentWord) {
+                typeSpeed = 2000; // pause at the end of word
+                isDeleting = true;
+            } else if (isDeleting && txt === '') {
+                isDeleting = false;
+                i++;
+                typeSpeed = 500; // pause before typing next word
+            }
+
+            setTimeout(typeWriter, typeSpeed);
+        }
+        
+        // Start typewriter
+        setTimeout(typeWriter, 500);
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team - AI4Science Catalyst Institute</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glass-card {
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(100, 116, 139, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-black text-slate-200 font-sans min-h-screen flex flex-col justify-between relative">
+    <!-- Background Video -->
+    <video autoplay loop muted playsinline class="fixed top-0 left-0 w-full h-full object-cover -z-20">
+        <source src="./logo/video_no_audio.mp4" type="video/mp4">
+    </video>
+    <div class="fixed top-0 left-0 w-full h-full bg-slate-950/80 -z-10 backdrop-blur-sm"></div>
+    
+    <!-- Navigation -->
+    <nav class="bg-black border-b border-slate-800 p-3 md:p-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="./logo/ai4sciencecata.png" alt="AI4Science Catalyst Logo" class="h-7 md:h-8">
+            </a>
+            <div class="flex gap-4">
+                <a href="index.html" class="text-slate-400 hover:text-white transition-colors font-medium">Home</a>
+                <a href="team.html" class="text-white font-medium">Team</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col items-center p-4 sm:p-12 mt-6 relative z-10">
+        <div class="max-w-4xl w-full">
+            <div class="text-center mb-12">
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-4">Founding President</h1>
+                <div class="w-16 h-1 bg-slate-500 rounded-full mx-auto mb-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-20 max-w-2xl mx-auto">
+                <a href="https://profiles.stanford.edu/186687" target="_blank" class="glass-card rounded-2xl p-8 text-center block hover:bg-slate-800/40 transition-colors">
+                    <div class="w-32 h-32 rounded-full mx-auto mb-5 overflow-hidden ring-4 ring-slate-700">
+                        <img src="images/le_cong.jpg" alt="Le Cong" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-bold text-2xl text-white mb-2 group-hover:text-blue-400">Le Cong</h3>
+                    <p class="text-base text-slate-400">Stanford University</p>
+                </a>
+                <a href="https://mwang-delta.vercel.app" target="_blank" class="glass-card rounded-2xl p-8 text-center block hover:bg-slate-800/40 transition-colors">
+                    <div class="w-32 h-32 rounded-full mx-auto mb-5 overflow-hidden ring-4 ring-slate-700">
+                        <img src="images/mengdi_wang.png" alt="Mengdi Wang" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-bold text-2xl text-white mb-2 group-hover:text-blue-400">Mengdi Wang</h3>
+                    <p class="text-base text-slate-400">Princeton University</p>
+                </a>
+            </div>
+
+            <div class="text-center mb-12">
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-4">Founding Team</h1>
+                <div class="w-16 h-1 bg-slate-500 rounded-full mx-auto mb-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-1 gap-8 mb-20 max-w-xs mx-auto">
+                <a href="https://wu-yc.github.io" target="_blank" class="glass-card rounded-2xl p-8 text-center block hover:bg-slate-800/40 transition-colors">
+                    <div class="w-32 h-32 rounded-full mx-auto mb-5 overflow-hidden ring-4 ring-slate-700">
+                        <img src="images/yingcheng_wu.jpeg" alt="Yingcheng Charles Wu" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-bold text-2xl text-white mb-2 group-hover:text-blue-400">Yingcheng Charles Wu</h3>
+                    <p class="text-base text-slate-400">Stanford University</p>
+                </a>
+            </div>
+
+            <div class="text-center mb-12">
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-4">Partner</h1>
+                <div class="w-16 h-1 bg-slate-500 rounded-full mx-auto mb-4"></div>
+            </div>
+
+            <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8 mb-16 max-w-3xl mx-auto">
+                <div class="bg-white rounded-lg p-3 md:p-4 shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center w-[120px] h-[60px]">
+                    <img src="images/autobio.jpg" alt="AutoBio" class="max-w-full max-h-full object-contain">
+                </div>
+                <div class="bg-white rounded-lg p-3 md:p-4 shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center w-[120px] h-[60px]">
+                    <img src="images/autox.jpg" alt="AutoX" class="max-w-full max-h-full object-contain">
+                </div>
+                <div class="bg-white rounded-lg p-3 md:p-4 shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center w-[120px] h-[60px]">
+                    <img src="images/nvidia.svg" alt="NVIDIA" class="w-1/2 object-contain">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/50 py-8 text-center flex flex-col items-center gap-2 relative z-10">
+        <p class="text-slate-500 text-xs">&copy; 2026 AI4Science Catalyst Institute. A Non-Profit Organization.</p>
+        <p class="text-slate-400 text-xs">Stanford - Princeton AI Co-Scientist Team</p>
+    </footer>
+</body>
+</html>
